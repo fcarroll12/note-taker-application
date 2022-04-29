@@ -2,31 +2,17 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+I created this project so that a user would be able to write, save, and delete multiple notes. This will help a user stay organized and on track of tasks that are needed to be completed. A user can reorganize the notes and also delete which ones they either finished or are no longer applicable. When a user clicks on the link to the notes page they are presented with their saved notes on the left hand side (titles) and a new note section on the right-hand column. A user inserts a title and text to their desired length (up to 500 characters). I learnt a lot about express.js and using GET/POST requests as well as different routes. I also learnt a lot about JSON and insomnia while building this application. I was also able to add the DELETE route so a user can delete a note they no longer want. 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+This project uses node.js, express.js, and stores notes with a unique id (uuid npm package) in a JSON file.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Start app by running npm start.
+Below is a screenshot example of deployed app.
 
     ```md
     ![alt text](assets/images/screenshot.png)
@@ -34,9 +20,6 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
+Github: https://github.com/fcarroll12/note-taker-application
+Heroku: https://git.heroku.com/mysterious-reef-20604.git
+Regarding Heroku, I am having troubles. Please check back later once bugs are resolved.  
