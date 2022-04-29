@@ -1,8 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
-const { readJsonFile,appendJsonFile } = require('../db/helpers/fsUtils');
+const { readJsonFile,appendJsonFile, writeJsonFile } = require('../db/helpers/fsUtils');
 const path = require('path');
 const notesRouter = require('express').Router();
-const errorMessage = res.status(500).json("Server error");
+// const errorMessage = res.status(500).json("Server error");
 // const htmlRouter = require('./htmlroutes');
 
 // const { readJsonFile } = require('../db/helpers/fsUtils.js')
@@ -15,7 +15,7 @@ notesRouter.get('/', (req, res) => {
   .then((notes) => res.json(notes))
   .catch((err) => {
     console.log(err);
-    errorMessage;
+    res.status(500).json("Server error");
   });
 }); 
   
@@ -47,12 +47,21 @@ notesRouter.post('/', (req, res) => {
     res.json(newNote);
   }).catch((err) => {
     console.log(err);
-    errorMessage;
+    res.status(500).json("Server error");
   });
 });
 
 notesRouter.delete('/:id', (req,res) => {
-  res.json({});
+
+  readJsonFile(path.join(__dirname,"../db/db.json")).then(notes => {
+    const updatedNotes = notes.filter((note) => note.id !== req.params.id);
+    return writeJsonFile(path.join(__dirname,"../db/db.json"), updatedNotes);
+  }).then(() => {
+    res.json("Deleted your note");
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json("Server error");
+  });
 });
 
 module.exports = notesRouter;

@@ -5,6 +5,9 @@ const readJsonFile = (filePath) => {
 
 };
 
+const writeJsonFile = (filePath, data) => 
+    writeFile(filePath, JSON.stringify(data));
+
 const appendJsonFile = (filePath, newData) => {
     return readJsonFile(filePath).then((data) => {
         data.push(newData);
@@ -12,4 +15,4 @@ const appendJsonFile = (filePath, newData) => {
     });
 };
 
-module.exports = { readJsonFile, appendJsonFile };
+module.exports = { readJsonFile, appendJsonFile, writeJsonFile };
