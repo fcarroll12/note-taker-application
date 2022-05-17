@@ -13,7 +13,7 @@ This project uses node.js, express.js, and stores notes with a unique id (uuid n
 Start app by running npm start.
 Below is a screenshot example of deployed app.
 
-    ![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot.png)
 
 ## Credits
 
